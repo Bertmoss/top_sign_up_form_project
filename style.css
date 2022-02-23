@@ -1,0 +1,22 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+img {
+  width: 100px;
+  height: auto;
+}
+h3 {
+  margin: 0px;
+}
+
+body > div:first-child {
+  float: left;
+  width: 40vw;
+  height: 100vh;
+  background: url(/images/background-image.jpg);
+}
+
+body > div:last-child {
+  float: right;
+}
