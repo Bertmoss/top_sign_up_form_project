@@ -8,46 +8,59 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <div>
+    <section>
       <div>
         <img src="/images/odin-lined.png" alt="The Odin Project Logo" />
         <h1>ODIN</h1>
       </div>
-      <p>Photo by <a href="">Hallie West</a> on <a href="">Unsplash</a></p>
-    </div>
-    <div>
-      <h3>
-        This is not a real online service! You know you need something like this
-        in your life to help you realize your deepest dreams. Sign up
-        <em>now</em> to get started<br />You <em>know</em> you want to.
-      </h3>
-      <form action="">
-        <caption>
-          Let's do this!
-        </caption>
-        <input type="text" name="first-name" id="first-name" required />
-        <label for="first-name">FIRST NAME</label>
-        <input type="text" name="surname" id="surname" required />
-        <label for="surname">LAST NAME</label>
-        <input type="email" name="mail" id="mail" required />
-        <label for="mail">EMAIL</label>
-        <input type="tel" name="phone" id="phone" /><label for="phone"
-          >Phone Number</label
-        >
-        <input type="password" name="password" id="password" /><label
-          for="password"
-          required
-          >PASSWORD</label
-        >
-        <input
-          type="password"
-          name="password-confirmation"
-          id="password-confirmation"
-          required
-        /><label for="password-confirmation">CONFIRM PASSWORD</label>
-        <button type="submit">Create Account</button>
+      <div>
+        <p>Photo by <a href="">Hallie West</a> on <a href="">Unsplash</a></p>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h4>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. Sign up
+          <em>now</em> to get started<span>You <em>know</em> you want to.</span>
+        </h4>
+        <h4>Let's do this!</h4>
+      </div>
+      <form action="" method="post">
+        <fieldset>
+          <label for="first-name"
+            >FIRST NAME
+            <input type="text" name="first-name" id="first-name" required />
+          </label>
+          <label for="surname"
+            >LAST NAME
+            <input type="text" name="surname" id="surname" required />
+          </label>
+          <label for="mail"
+            >EMAIL
+            <input type="email" name="mail" id="mail" required />
+          </label>
+          <label for="phone"
+            >PHONE NUMBER <input type="tel" name="phone" id="phone"
+          /></label>
+          <label for="password"
+            >PASSWORD
+            <input type="password" name="password" id="password" required
+          /></label>
+          <label for="password-confirmation"
+            >CONFIRM PASSWORD
+            <input
+              type="password"
+              name="password-confirmation"
+              id="password-confirmation"
+              required
+          /></label>
+        </fieldset>
+        <div>
+          <button type="submit">Create Account</button>
+          <p>Already have an account? <a href="http://">Log in</a></p>
+        </div>
       </form>
-      <p>Already have an account? <a href="http://">Log in</a></p>
-    </div>
+    </section>
   </body>
 </html>
