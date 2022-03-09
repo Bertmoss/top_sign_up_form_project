@@ -79,9 +79,7 @@ section:last-of-type {
   width: 65%;
   margin: 0px;
 }
-section:last-of-type * {
-  width: 400px;
-}
+
 input:focus {
   accent-color: blue;
   border-color: blue;
@@ -102,11 +100,14 @@ h4:last-of-type {
 }
 
 form {
-  border: 1px solid red;
-  background-color: white;
+  width: 100%;
+  margin: 0px;
 }
+
 fieldset {
   padding-right: 300px;
+  width: 100%;
+  border: 0px;
 
   display: flex;
   justify-content: flex-start;
@@ -114,7 +115,6 @@ fieldset {
   gap: 15px;
   flex-wrap: wrap;
 
-  border: 1px solid blue;
   background-color: white;
 }
 input {
@@ -124,9 +124,6 @@ label {
   font-size: 0.5rem;
 }
 form > div {
-  border: 1px solid blue;
-  background-color: white;
-
   background-color: rgb(245, 245, 245);
 }
 
