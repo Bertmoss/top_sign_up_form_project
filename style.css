@@ -5,8 +5,11 @@
 :root {
   --olive: rgb(89, 109, 72);
   --gray: rgb(245, 245, 245);
-  --white: rgb(255,255,255);
+  --white: rgb(255, 255, 255);
   --black: rgba(0, 0, 0, 0.4);
+  --gray-darker: rgb(229, 231, 235);
+  --blue: rgb(30, 144, 255);
+  --red: rgb(255, 0, 0);
 }
 html {
   box-sizing: border-box;
@@ -95,12 +98,11 @@ h4 > span {
   margin-top: 5%;
 }
 h4:last-of-type {
- margin: 0px;
- padding: 2% 5%;
+  margin: 0px;
+  padding: 2% 5%;
 
- background-color: var(--white);
+  background-color: var(--white);
 }
-
 
 form {
   width: 100%;
@@ -108,7 +110,7 @@ form {
 }
 
 fieldset {
-  padding:0% 42% 2% 5%;
+  padding: 0% 42% 2% 5%;
   border: 0px;
 
   display: flex;
@@ -119,9 +121,18 @@ fieldset {
 
   background-color: var(--white);
 }
+
+
 input {
   display: block;
+  border: 1px solid var(--gray-darker);
+  border-radius: 5px;
 }
+input:focus {
+  border: 1px solid var(--blue);
+  outline: none;
+}
+
 label {
   font-size: 0.5rem;
 }
@@ -137,7 +148,6 @@ button {
   box-shadow: none;
   padding: 5px 30px;
   border-radius: 5px;
-  
 }
 section:last-of-type p {
   font-size: 0.7rem;
@@ -147,11 +157,13 @@ section:last-of-type a {
   color: var(--olive);
   font-weight: bolder;
 }
-/*
-section:last-of-type {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-} */
+.valid-class {
+  border: 1px solid var(--olive);
+}
+.invalid-class {
+  border: 1px solid var(--red);
+}
+.invalid-message {
+  color: red;
+  visibility: hidden;
+}
