@@ -31,7 +31,7 @@
       <form action="" method="post">
         <fieldset>
           <label for="first-name"
-            >FIRST NAME
+            >FIRST NAME <span class="invalid-message">FIRST NAME REQUIRED</span>
             <input type="text" name="first-name" id="first-name" required />
           </label>
           <label for="surname"
@@ -39,18 +39,18 @@
             <input type="text" name="surname" id="surname"/>
           </label>
           <label for="mail"
-            >EMAIL
+            >EMAIL <span class="invalid-message">PLEASE INPUT A VALID EMAIL ADDRESS</span>
             <input type="email" name="mail" id="mail" required />
           </label>
           <label for="phone"
-            >PHONE NUMBER<input
+            >PHONE NUMBER <span class="invalid-message">PLEASE INPUT A PHONE NUMBER</span> <input
               type="tel"
               name="phone"
               id="phone"
               pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
           /></label>
           <label for="password"
-            >PASSWORD <span class="invalid-message">THE PASSWORDS DON'T MATCH</span>
+            >PASSWORD <span class="invalid-message-password">THE PASSWORDS DON'T MATCH</span>
             <input type="password" name="password" id="password" required
           /></label>
           <label for="password-confirmation"

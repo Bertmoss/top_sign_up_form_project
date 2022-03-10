@@ -1,77 +1,40 @@
 
-
-
-/*
+//Changes inputs border based on validity status and hides/shows individual inputs invalid messages
 const inputs = document.querySelectorAll("input");
 inputs.forEach((input) => {
-  input.addEventListener("click", () => {
-    if (!input.value) {
-      input.classList.add("invalid-class");
-    }
-  });
-  input.addEventListener("input", () => {
-    //need to accommodate password and telephone and email. Shouldn't be through value but through valid/invalid status.
-    //Otherwise it will falsely claim its valid (for example in email)and falsely claim invalid (telephone which isn't required)
-    if (input.value) {
-      input.classList.remove("invalid-class");
-      input.classList.add("valid-class");
+  input.addEventListener("blur", () => {
+    let invalidNotification = document.querySelector(`label[for="${input.id}"] > .invalid-message`);
+    if (input.id == "password" || input.id == "password-confirmation") {
+      //skips password input and password-confirmation input
+    } else if (input.validity.valid && !input.value) {
+      input.setAttribute("style", "border: 1px solid var(--gray-darker)")
+    } else if (input.validity.valid) {
+      input.setAttribute("style", "border: 1px solid var(--olive)")
+      invalidNotification.setAttribute("style", "visibility: hidden")
     } else {
-      input.classList.remove("valid-class");
-      input.classList.add("invalid-class");
+      input.setAttribute("style", "border: 1px solid var(--red)")
+      invalidNotification.setAttribute("style", "visibility: visible")
     }
   });
 });
-*/
-
-//Password Input Fuctionality
-
-const invalidInputs = document.querySelectorAll("input:invalid"); 
-const validInputs = document.querySelectorAll("input:valid");
-
-
-invalidInputs.forEach((invalidInput) => {
-  invalidInput.addEventListener("input", () => {
-    invalidInput.setAttribute("style", "border-color: var(--red)")
-  })
-})
-validInputs.forEach((validInput) => {
-  validInput.addEventListener("input", ()=>{
-    validInput.setAttribute("style", "border-color: var(--olive)")
-  })
-})
 
 //Password functionality
-
 const passwordInput = document.querySelector("#password");
 const passwordConfirmation = document.querySelector("#password-confirmation");
-let invalidMessage = document.querySelector(".invalid-message");
+let invalidMessage = document.querySelector(".invalid-message-password");
 
-//checks if the passwords match
-function passwordMatch() {
+
+function stylePasswordMatching() {
   if (passwordInput.value === passwordConfirmation.value) {
-    return true;
-  } else {
-    return false;
+    invalidMessage.setAttribute("style", "visibility: hidden");
+    passwordInput.setAttribute("style", "border: 1px solid var(--olive)");
+    passwordConfirmation.setAttribute("style", "border: 1px solid var(--olive)");
+  } else if(passwordInput.value !== passwordConfirmation.value && passwordConfirmation.value) {
+    invalidMessage.setAttribute("style", "visibility: visible");
+    passwordInput.setAttribute("style", "border: 1px solid var(--red)");
+    passwordConfirmation.setAttribute("style", "border: 1px solid var(--red)");
   }
 }
 
-//Shows the invalid message if the confirmation is not the same.
-passwordConfirmation.addEventListener("blur", () => {
-  if (!passwordMatch()) {
-    invalidMessage.setAttribute("style", "visibility: visible")
-  }
-});
-//Hides the invalid message if the password confirmation is changed to fit the password.
-passwordConfirmation.addEventListener("input", () => {
-  if (passwordMatch()) {
-    invalidMessage.setAttribute("style", "visibility: hidden")
-  }
-})
-//Hides the invalid message if the password is changed to fit the password confirmation
-passwordInput.addEventListener("input", () => {
-  if (passwordMatch()) {
-    invalidMessage.setAttribute("style", "visibility: hidden")
-  }
-})
-
-
+passwordConfirmation.addEventListener("input", stylePasswordMatching)
+passwordInput.addEventListener("input", stylePasswordMatching)
