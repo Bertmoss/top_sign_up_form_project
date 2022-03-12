@@ -36,25 +36,33 @@
           </label>
           <label for="surname"
             >LAST NAME
-            <input type="text" name="surname" id="surname"/>
+            <input type="text" name="surname" id="surname" />
           </label>
           <label for="mail"
-            >EMAIL <span class="invalid-message">PLEASE INPUT A VALID EMAIL ADDRESS</span>
+            >EMAIL
+            <span class="invalid-message"
+              >PLEASE INPUT A VALID EMAIL ADDRESS</span
+            >
             <input type="email" name="mail" id="mail" required />
           </label>
           <label for="phone"
-            >PHONE NUMBER <span class="invalid-message">PLEASE INPUT A PHONE NUMBER</span> <input
+            >PHONE NUMBER
+            <span class="invalid-message">PLEASE INPUT A PHONE NUMBER</span>
+            <input
               type="tel"
               name="phone"
               id="phone"
               pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
           /></label>
           <label for="password"
-            >PASSWORD <span class="invalid-message-password">THE PASSWORDS DON'T MATCH</span>
+            >PASSWORD
+            <span class="invalid-message-password"
+              >THE PASSWORDS DON'T MATCH</span
+            >
             <input type="password" name="password" id="password" required
           /></label>
           <label for="password-confirmation"
-            >CONFIRM PASSWORD 
+            >CONFIRM PASSWORD
             <input
               type="password"
               name="password-confirmation"
