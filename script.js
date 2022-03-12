@@ -19,7 +19,7 @@ inputs.forEach((input) => {
   });
 });
 
-//Password functionality
+//Password Functionality
 const passwordInput = document.querySelector("#password");
 const passwordConfirmation = document.querySelector("#password-confirmation");
 let invalidMessage = document.querySelector(".invalid-message-password");
